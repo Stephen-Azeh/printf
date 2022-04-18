@@ -1,33 +1,45 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+
+#include <stdarg.h> /*for varyadic functions*/
+#include <stdlib.h> /*for malloc and NULL*/
+#include <unistd.h> /*for write*/
+#include <limits.h> /* for test cases*/
 
 /**
- * struct fmt - function to check for formats
- * @type: The format to print
- * @f: The print function to use
+ * struct special_cases - struct for the special cases
+ * @match: the special character to match after find a percentage
+ * @function: the associated function to be called in each specialcase
  */
-typedef struct fmt
-{
-	char *type;
-	int (*f)();
-} fmt_t;
 
+typedef struct special_cases
+{
+	char *match;
+	int (*function)(va_list);
+} spc_t;
+
+/*format and print data*/
 int _printf(const char *format, ...);
-int print_op(const char *format, fmt_t *print_arr, va_list list);
-int ch(va_list character);
-int str(va_list string);
-int _int(va_list integ);
-int _ui(va_list unsign);
-int _oct(va_list octo);
-int _rot13(va_list rot);
-int _hex_str(unsigned int n, unsigned int hex, char alpha);
-int _hex_l(va_list hexa);
-int _hex_u(va_list hexa);
-int _strlen(char *s);
-int _bin(va_list bin);
+
+/*writes the character c to stdout*/
 int _putchar(char c);
-#endif
+
+/*search for match and execute the function according to this*/
+int (*mod_character_s(const char *next, int dino))(va_list);
+
+/*prints a char*/
+int print_char(va_list c);
+
+/*prints a string */
+int print_string(va_list s);
+
+/*converts a string to an integer and prints its content.*/
+int print_number(va_list i);
+
+/*converts a string to an unsigned integer and prints its content*/
+int print_unsigned(va_list u);
+
+/*prints a string in reverse*/
+int print_reverse(va_list r);
+
+#endif /* HOLBERTON_H */
