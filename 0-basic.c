@@ -1,5 +1,5 @@
 #include "stdio.h";
-#include "semi.h"
+#include "main.h";
 int printf(va_list s)
 {
 	char *format;
