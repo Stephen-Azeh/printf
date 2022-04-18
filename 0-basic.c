@@ -2,17 +2,17 @@
 #include "semi.h"
 int printf(va_list s)
 {
-	char *string;
+	char *format;
 	int i;
 
-	string = va_arg(s, char *);
-	if (string == '\0')
+	format = va_arg(s, char *);
+	if (format == '\0')
 	{
-		string = "(null)";
+		format = "(null)";
 	}
-	for (i = 0; string[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		_putchar(string[i]);
+		_putchar(format[i]);
 	}
 	return (i);
 }
