@@ -5,5 +5,5 @@ A project on printf function created by Semilore Osunsanmi and Emmanuella Amukwu
 This printf returns the number of characters printed.  
 
 # AUTHORS
-OSUNSANMI  SEMILORE -@Osunsanmi@gmail.com
-EMMANUELLA  AMUKWUO -@lawrieella002@gmail.com
+OSUNSANMI  SEMILORE -Osunsanmi@gmail.com
+EMMANUELLA  AMUKWUO -lawrieella002@gmail.com
