@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # printf
 
 A simple printf function built by Chidozie Ogwalu and Israel Adenuga for Alx software Engineering School.
@@ -177,3 +178,6 @@ Function That Returns The Amount Of Indetifiers.
 Osunsanmi Semilore - @osunsanmisemilore@gmail.com
  
  # End
+=======
+
+>>>>>>> origin/printf
