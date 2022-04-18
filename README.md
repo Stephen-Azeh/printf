@@ -6,4 +6,4 @@ This printf returns the number of characters printed.
 
 # AUTHORS
 OSUNSANMI  SEMILORE -0sunsanmi@gmail.com
-EMMANUELLA  AMUKWUO -EllaLawrie
+EMMANUELLA  AMUKWUO -lawrieella002@gmail.com
