@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.hoo" 
 
 /**
  * fill_binary_array - prints decimal in binary

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.hoo"
 /**
  * get_print_func - selects the correct function to perform the operation.
  * @s: argument indentifier
