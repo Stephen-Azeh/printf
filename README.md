@@ -1,180 +1,37 @@
-# printf
+﻿# _printf  
+![enter image description here](https://i.imgur.com/y79WiDr.png) 
+That is the prototype for this implementation(_printf). As you can see, this prototype is an implementation of the **printf standard function** and **variadic function** .  ## What is printf? "Writes the C string pointed by _format_ to the standard output ([stdout](http://www.cplusplus.com/stdout))" - [cplusplus](http://www.cplusplus.com/reference/cstdio/printf/) 
 
-A simple printf function built by Chidozie Ogwalu and Israel Adenuga for Alx software Engineering School.
-# Welcome
+In other words, the function receives a format (*const char* **format*) and a list of arguments (the magic of variadic functions). So printf inside, take the string format and search for specific patterns, then the pattern that was found it is passed to other function that prints the match pattern  
 
-Rebuild of the standard printf function in C. Our project required a function capable of printing with the %d, %c, %s, and %% specifiers to standard output. printf returns the number of characters printed (excluding the null byte at the end of strings). We were not asked to handle flag characters, field width, precision, or length.
-# Format 
+### Patterns 
 
-Our team chose to add %x ,%X, %b, %o, %u, %r, %R, and %p formatting. We relied on the library we have been building at Alx as well as new concepts gathered during this project.
-# Supported Format Types
-TYPE - OUTPUT
+![enter image description here](https://i.imgur.com/vmU0FhC.png) 	
+ [cplusplus](http://www.cplusplus.com/reference/cstdio/printf)  
 
-c - Single character
+That image shows specifiers that we can use in the printf.  In this case, _printf just allow specifiers like   
+|Specifiers|Functions|Description| 
+|--|--|--|
+|s|print_string|print a string| 
+|c|print_char|print just a char| 
+|i|print_integer|print a number in base 10|
+|d|print_integer|print a number in base 10|
+|p|print_pointer|print a memory address in base 16 lowercase| 
+|b|print_binary|print a number in base 2|
+|x|print_hexadecimal_low|print a number in base 16 lowercase| 
+|X|print_hexadecimal_upp|print a number in base 16 uppercase|
+|o|print_octal|print a number in base 8| 
+|R|print_rot|print a string encoded in rot13 format| 
 
-s - String of character
+## Flowcharts
 
-r - String in reverse
+These 3 functions are the bases for this project:
 
-R - String in rot13
+ 1. Printf: Is the frontend of all the algorithm, so is the prototype, and just receive the variables
+ 2. Handler: Is the controller for the string and the formats, and also does the counter for the numbers of bytes that are printing
+ 3. Percent handler: Compare a list of possible specifiers with the current pattern, and return the corresponding function
 
-d - Integer in decimal
-
-i - integer
-
-% - Percent sign
-
-x - Lowercase hex(loervase)
-
-X - Uppercase hex (unsigned)
-
-b -  signed binary
-
-o -  signed octal
-
-u - unsigned integer
-
-p - pointer address
-
-# Examples
-
-Character: printf("%c", A); Output:: A
-
-String: printf("%s", This is a string.); Output: This is a string.
-
-Integer: printf("%i", 5); Output: 5
-
-# File Functions
-
-_printf.c
-Own Printf Function Tha Performs Formatted Output Conversion And Print Data.
-
- # main.h
-Header File Were All Prototypes Are Saved.
-
-# get_print_func.c
-Pointer To A Function That Selects The Correct Function To Perform The Operation.
-
-# print_buf.c
-Function That Prints The Buffer.
-
-# handl_buf.c
-Function That Concatenates The Buffer Characters.
-
-# print_chr.c
-Function That Writes The Character C To Stdout.
-
-/* Indetifier : %c */
-# print_str.c
-Function That Writes The String To Stdout.
-
-/* Indetifier : %s */
-# print_int.c
-Function That Prints An Integer.
-
-/* Indetifier : %i or %d */
-# print_bnr.c
-Function That Prints Decimal In Binary.
-
-/* Indetifier : %b */
-# print_oct.c
-Function That Prints Decimal In Octal.
-
-/* Indetifier : %o */
-# print_hex.c
-Function That Prints Decimal In Hexadecimal.
-
-/* Indetifier : %x */
-# print_upx.c
-Function That Prints Decimal In Uppercase Hexadecimal.
-
-/* Indetifier : %X */
-# print_usr.c
-Function That Prints A String And Values Of Non-Printed Chars.
-
-/* Indetifier : %S */
-# print_unt.c
-Function That Prints An Unsigned Integer.
-
-/* Indetifier : %u */
-# print_rev.c
-Function That Writes The String To Stdout In Reverse.
-
-/* Indetifier : %r */
-# print_rot.c
-Function That Writes The String To Stdout In Rot13.
-
-/* Indetifier : %R */
-# print_add.c
-Function That Prints The Address Of An Input Variable.
-
-/* Indetifier : %p */
-# print_long_oct.c
-Function That Prints Long Decimal Number In Octal.
-
-/* Indetifier : %lo */
-# print_long_hex.c
-Function That Prints Long Decimal Number In Hexadecimal.
-
-/* Indetifier : %lx */
-# print_long_int.c
-Function That Prints A Long Integer.
-
-/* Indetifier : %li */
-# print_long_upx.c
-Function That Prints A Long Decimal In Uppercase Hexadecimal.
-
-/* Indetifier : %lX */
-# print_long_unt.c
-Function That Prints A Long Unsigned Integer.
-
-/* Indetifier : %lu */
-# print_short_oct.c
-Function That Prints Short Decimal Number In Octal.
-
-/* Indetifier : %ho */
-# print_short_hex.c
-Function That Prints Short Decimal Number In Hexadecimal.
-
-/* Indetifier : %hx */
-# print_short_int.c
-Function That Prints A Short Integer.
-
-# print_short_upx.c
-Function That Prints A Short Decimal In Uppercase Hexadecimal.
-
-/* Indetifier : %hX */
-# print_short_unt.c
-Function That Prints A Short Unsigned Integer.
-
-/* Indetifier : %hu */
-# print_num_hex.c
-Function That Print A Number In Hexadecimal Begining With 0 And x.
-
-/* Indetifier : %#x */
-# print_num_oct.c
-Function That Prints A Number In Octal Begining With 0 And o.
-
-/* Indetifier : %#o */
-# print_num_upx.c
-Function That Prints A Number In Uppercase Hexadecimal.
-
-/* Indetifier : %#X */
-# print_plus_int.c
-Function That Prints An Integer With Plus Symbol.
-
-/* Indetifier : %+i */
-# print_space_int.c
-Function That Prints An Integer Begining With 0 And u.
-
-/* Indetifier : % i */
-# ev_print_func.c
-Function That Returns The Amount Of Indetifiers.
-
-
-# Authors
-
-Chidozie Ogwalu -@gentomamacine
-Israel Adenuga -@adexino0606
- 
- # End
+![enter image description here](https://i.imgur.com/SjqIUs7.png) ![enter image description here](https://i.imgur.com/ouUh2G4.png)
+![enter image description here](https://i.imgur.com/90TRtGH.png) 
+## Contributors  
+[@Jose Parrales - Github](https://github.com/JParrales) - [@David Orozco - Github](https://github.com/davixcky)  

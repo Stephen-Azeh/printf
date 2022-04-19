@@ -1,41 +1,47 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * print_rot - writes the str in ROT13
- * @arguments: input string
- * @buf: buffer pointer
- * @ibuf: index for buffer pointer
- * Return: number of chars printed.
+ * rot13 - Encodes a string using rot13.
+ * @s: String to enconde
+ * Return: String encode
  */
-
-int print_rot(va_list arguments, char *buf, unsigned int ibuf)
+int rot13(char *s)
 {
-	char alf[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char *str;
-	unsigned int i, j, k;
-	char nill[] = "(avyy)";
+	int i, j;
+	char *normal, *rot13;
 
-	str = va_arg(arguments, char *);
-	if (str == NULL)
+	normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (i = 0; nill[i]; i++)
-			ibuf = handl_buf(buf, nill[i], ibuf);
-		return (6);
-	}
-	for (i = 0; str[i]; i++)
-	{
-		for (k = j = 0; alf[j]; j++)
+		for (j = 0; normal[j] != '\0'; j++)
 		{
-			if (str[i] == alf[j])
+			if (s[i] == normal[j])
 			{
-				k = 1;
-				ibuf = handl_buf(buf, rot[j], ibuf);
+				_putchar(rot13[j]);
 				break;
 			}
 		}
-		if (k == 0)
-			ibuf = handl_buf(buf, str[i], ibuf);
+
+		if (!normal[j])
+			_putchar(s[i]);
 	}
 	return (i);
+}
+
+/**
+ * print_rot - Prints the rot13'ed string
+ * @list: String to encoded
+ *
+ * Return: Length of the string encoded
+ **/
+int print_rot(va_list list)
+{
+	char *p;
+	int p_len;
+
+	p = va_arg(list, char *);
+	p_len = rot13((p != NULL) ? p : "(ahyy)");
+
+	return (p_len);
 }
